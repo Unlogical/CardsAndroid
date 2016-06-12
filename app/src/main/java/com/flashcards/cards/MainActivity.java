@@ -17,18 +17,13 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.main_activity);
 
         RecyclerView imageRecyclerView = (RecyclerView) findViewById(R.id.main_activity_image_list);
-        List<Drawable> imageList = new ArrayList<>();
-        imageList.add(getDrawable(R.drawable.image_1));
-        imageList.add(getDrawable(R.drawable.image_2));
-        imageList.add(getDrawable(R.drawable.image_3));
-        imageList.add(getDrawable(R.drawable.image_4));
         List<String> imageLabelList = new ArrayList<>();
-        imageLabelList.add("Image 1");
-        imageLabelList.add("Image 2");
-        imageLabelList.add("Image 3");
-        imageLabelList.add("Image 4");
+        imageLabelList.add("Название первого набора");
+        imageLabelList.add("Название второго набора");
+        imageLabelList.add("Название третьего набора");
+        imageLabelList.add("Название четвёртого набора");
 
-        RecyclerView.Adapter adapter = new RecyclerViewAdapter(imageList, imageLabelList);
+        RecyclerView.Adapter adapter = new RecyclerViewAdapter(imageLabelList);
         imageRecyclerView.setAdapter(adapter);
         imageRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

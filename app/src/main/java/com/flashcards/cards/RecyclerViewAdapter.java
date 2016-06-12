@@ -14,14 +14,10 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
-    public static final String EXTRA_IMAGE = "extra_image";
-    public static final String EXTRA_TEXT = "extra_text";
-
-    List<Drawable> imageList;
+    public static final String EXTRA_POSITION = "extra_position";
     List<String> imageLabelsList;
 
-    public RecyclerViewAdapter(List<Drawable> imageList, List<String> imageLabelsList) {
-        this.imageList = imageList;
+    public RecyclerViewAdapter(List<String> imageLabelsList) {
         this.imageLabelsList = imageLabelsList;
     }
 
@@ -33,20 +29,32 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
     }
 
     @Override
-    public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+    public void onBindViewHolder(RecyclerView.ViewHolder holder, final int position) {
         final Context context = holder.itemView.getContext();
         ImageView image = (ImageView) holder.itemView.findViewById(R.id.recycler_view_list_item_image);
         TextView imageLabel = (TextView) holder.itemView.findViewById(R.id.recycler_view_list_item_label);
-        image.setImageDrawable(imageList.get(position));
+        switch (position) {
+            case 0:
+                image.setImageDrawable(context.getDrawable(R.drawable.image_1));
+                break;
+            case 1:
+                image.setImageDrawable(context.getDrawable(R.drawable.image_2));
+                break;
+            case 2:
+                image.setImageDrawable(context.getDrawable(R.drawable.image_3));
+                break;
+            case 3:
+                image.setImageDrawable(context.getDrawable(R.drawable.image_4));
+                break;
+        }
         imageLabel.setText(imageLabelsList.get(position));
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, CardFace.class);
-                intent.putExtra()
+                intent.putExtra(EXTRA_POSITION, position);
                 context.startActivity(intent);
-
             }
         });
     }

@@ -3,20 +3,20 @@
     android:layout_width="match_parent" android:layout_height="match_parent"    android:paddingTop="16dp">
 
     <RelativeLayout
-        android:id="@+id/card_face_card_face_layout"
+        android:id="@+id/card_back_card_back_layout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:paddingBottom="16dp">
 
         <ImageView
-            android:id="@+id/card_face_image"
+            android:id="@+id/card_back_image"
             android:layout_width="340dp"
             android:layout_height="300dp"
             android:scaleType="center" />
 
         <TextView
-            android:id="@+id/card_face_image_label"
+            android:id="@+id/card_back_image_label"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
             android:background="@color/textBackground"
@@ -27,12 +27,12 @@
     </RelativeLayout>
 
     <Button
-        android:id="@+id/card_face_spin_card_button"
+        android:id="@+id/card_back_spin_card_button"
         android:layout_width="340dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
         android:text="Перевернуть"
-        android:layout_below="@id/card_face_card_face_layout"
+        android:layout_below="@id/card_back_card_back_layout"
         android:background="@color/spinButtonColor"
         android:textStyle="bold"
         android:textColor="#FFF"
@@ -42,12 +42,13 @@
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal"
-        android:layout_below="@id/card_face_spin_card_button"
+        android:layout_below="@id/card_back_spin_card_button"
         android:paddingTop="16dp"
         >
 
 
         <ImageButton
+            android:id="@+id/card_back_mark_low_button"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_weight="1"
@@ -56,6 +57,7 @@
             android:layout_marginRight="4dp"
             />
         <ImageButton
+            android:id="@+id/card_back_mark_middle_button"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_weight="1"
@@ -64,6 +66,7 @@
             android:layout_marginRight="4dp"
             />
         <ImageButton
+            android:id="@+id/card_back_mark_high_button"
             android:layout_width="wrap_content"
             android:layout_height="40dp"
             android:layout_weight="1"
