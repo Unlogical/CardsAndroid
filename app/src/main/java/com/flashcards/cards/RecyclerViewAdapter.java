@@ -14,6 +14,9 @@ import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder> {
 
+    public static final String EXTRA_IMAGE = "extra_image";
+    public static final String EXTRA_TEXT = "extra_text";
+
     List<Drawable> imageList;
     List<String> imageLabelsList;
 
@@ -41,6 +44,9 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerView.ViewH
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(context, CardFace.class);
+                intent.putExtra()
+                context.startActivity(intent);
+
             }
         });
     }
